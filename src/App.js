@@ -8,7 +8,7 @@ import Footer from "./components/Footer/Footer";
 
 const theme = createMuiTheme({
   palette: {
-    type: "dark",
+    type: "light",
   },
 });
 
@@ -36,7 +36,7 @@ class App extends React.Component {
         <Navbar />
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Typography style={{ marginTop: 50 }}>
+          <Typography style={{ marginTop: 125 }}>
             <Grid container direction="row" spacing={2}>
               {booksData.map((book) => (
                 <BooksCard {...book.fields} key={book.fields.id} />
