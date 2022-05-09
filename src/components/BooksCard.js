@@ -19,12 +19,35 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     maxWidth: 350,
-    padding: 20,
   },
   media: {
-    height: 400,
-    maxWidth: 350,
+    height: 0,
+    paddingTop: "100%", // 1:1
   },
+  outfit: {
+    fontFamily: "Outfit",
+    backgroundColor: "#F68128",
+    color: "#FFFFFF",
+    padding: 8,
+    fontSize: "1.55rem",
+    borderRadius: 3,
+  },
+  description: {
+    fontFamily: "Poppins, sans-serif",
+    fontSize: "0.9rem",
+  },
+  date: {
+    backgroundColor: "#23C4ED",
+    color: "#FFFFFF",
+    padding: 3,
+    marginTop: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    borderRadius: 3,
+  },
+  mode: {
+	  marginTop: 25
+  }, 
 }));
 
 function BooksCard({ Name, Type, Date, Description, Image, Mode }) {
@@ -38,29 +61,33 @@ function BooksCard({ Name, Type, Date, Description, Image, Mode }) {
               <CardMedia
                 className={classes.media}
                 image={Image}
-                title="React"
+                title="card image"
               />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h1">
+              <CardContent className={classes.cardcontent}>
+                <Typography className={classes.outfit} gutterBottom>
                   {Name}
                 </Typography>
+
+                <Typography gutterBottom className={classes.date}>
+                  Happening On :{Date}
+                </Typography>
+                
                 <Typography
                   paragraph
                   variant="body3"
                   component="p"
-                  align="right"
+                  align="center"
+                  className={classes.mode}
                 >
-                  {Mode}
+                  It's Happening {Mode}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {Type}
+                <Typography variant="body2" color="textPrimary" component="p">
+                  And It's a {Type}
                 </Typography>
-                <Typography gutterBottom variant="h3" component="h2" />
-                {Date}
               </CardContent>
             </CardActionArea>
-            <CardContent>
-              <Typography paragraph variant="body2" component="h6">
+            <CardContent >
+              <Typography paragraph className={classes.description}>
                 {Description}
               </Typography>
             </CardContent>
