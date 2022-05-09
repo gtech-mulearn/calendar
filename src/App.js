@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { ThemeProvider } from "@material-ui/styles";
 import { CssBaseline, Typography, createMuiTheme } from "@material-ui/core";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 const theme = createMuiTheme({
   palette: {
@@ -43,6 +44,7 @@ class App extends React.Component {
             </Grid>
           </Typography>
         </ThemeProvider>
+        <Footer />
       </>
     );
   }
