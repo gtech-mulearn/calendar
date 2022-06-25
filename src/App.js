@@ -23,8 +23,8 @@ class App extends React.Component {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.records);
-        this.setState({ booksData: res.records });
+        const sortedRecords = res.records.sort((a, b) => a.fields.Date.localeCompare(b.fields.Date));
+        this.setState({ booksData: sortedRecords });
       })
       .catch((error) => console.log(error));
   }
